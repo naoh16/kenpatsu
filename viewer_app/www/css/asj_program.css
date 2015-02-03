@@ -1,0 +1,63 @@
+body {
+	-webkit-text-size-adjust: 100%;
+}
+
+h2 {font-size: 24px;}
+
+h2 span.place {
+	font-size: 60%;
+	font-style:oblique;
+}
+.theme {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.session_header {
+	word-break: break-all;
+}
+.session div {
+	height: 180pt;
+	overflow:auto;
+}
+.sessionP div {
+	height: 90pt;
+	overflow:auto;
+}
+.session_detail {
+	padding-top: 5pt;
+	padding-bottom: 5pt;
+}
+
+.pid {
+	font-size: 150%;
+	font-weight: bold;
+}
+.ptitle {
+	font-weight: bold;
+}
+
+.ellipsis {
+}
+@media screen and (max-width: 768px) {
+	.session div,
+	.sessionP div {
+		height: 120pt;
+		/* height: auto; */
+	}
+	.ellipsis {
+		text-overflow: ellipsis;
+		-webkit-text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		word-break: break-all;
+	}
+}
+.cur_presen {
+	color: #000;
+	background-color: #fee;
+}
+.next_presen {
+	color: #666;
+	background-color: #eee;
+}
+

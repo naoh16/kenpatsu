@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="./css/sticky-footer-navbar.css">
+  <link rel="stylesheet" href="./css/asj_program.css" />
+  <style></style>
+  
+  <title>日本音響学会2014年秋季研究発表会</title>
+</head>
+<body>
+<!-- Fixed Header -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header pull-left">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="detail.html"><span class="glyphicon glyphicon-th-list"></span>
+          2014年秋季研究発表会 &raquo;</a>
+      </div>
+      <div class="navbar-header btn-group pull-right hidden-xs">
+        <button type="button" class="btn btn-default btn-sm navbar-btn" onclick="zoom_font_size('body', -1);"><span class="glyphicon glyphicon-zoom-out"></span></button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="zoom_font_size('body', +1);"><span class="glyphicon glyphicon-zoom-in"></span></button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li id="day1"><a href="#1" onclick="asjp_select_day(1);">1日目（9/3水）</a></li>
+          <li id="day2"><a href="#2" onclick="asjp_select_day(2);">2日目（9/4木）</a></li>
+          <li id="day3"><a href="#3" onclick="asjp_select_day(3);">3日目（9/5金）</a></li>
+ <!--         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="data/2014autumn_timeschedule.pdf" target="_blank">タイムテーブル（PDF）</a></li>
+              <li><a href="data/2014autumn_access_map.pdf" target="_blank">会場案内図（PDF）</a></li>
+              <li><a href="data/2014autumn_program.pdf" target="_blank">発表プログラム（PDF）</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Change view</li>
+              <li><a href="#"><span class="glyphicon glyphicon-ok"><span>List view</a></li>
+              <li><a href="detail.html">Deail view</a></li>
+            </ul>
+          </li>-->
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </div>
+<!-- Fixed Footer -->
+  <div class="btn-toolbar navbar navbar-default navbar-fixed-bottom" role="toolbar">
+    <div class="container">
+      <div class="btn-group">
+<!--        <button type="button" class="btn btn-default navbar-btn" onclick="update_now(-60); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();">-1h</button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="update_now(-10); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();">-10m</button>
+-->
+        <button type="button" class="btn btn-default navbar-btn" onclick="asjp_update_now(-1440); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();"><span class="glyphicon glyphicon-step-backward"></span></button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="asjp_update_now(); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();"><span class="glyphicon glyphicon-time"></span><span id="nowtime"></span></button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="asjp_update_now(+15); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();">+15m</button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="asjp_update_now(+30); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();">+30m</button>
+        <button type="button" class="btn btn-default navbar-btn" onclick="asjp_update_now(+60); asjp_updatehtml_panels(); asjp_updatehtml_nowtime();">+1h</button>
+      </div>
+   </div>
+  </div>
+
+<!-- Contents -->
+  <div class="container-fluid">
+    <div class="navbar visible-xs" style="position: fixed; right: 10px; width: 40px; z-index: 100; opacity:.8">
+      <div class="btn-group btn-group-vertical">
+<!--        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', -1);"><span class="glyphicon glyphicon-zoom-out"></span></button>
+        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', +1);"><span class="glyphicon glyphicon-zoom-in"></span></button>
+-->
+        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', +1);"><span class="glyphicon glyphicon-plus"></span></button>
+        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', -1);"><span class="glyphicon glyphicon-minus"></span></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <h2>お知らせ</h2>
+        <p>Twitter用の公式ハッシュタグは #asj2014a です！</p>
+<!--        <div id="asj_news_contents">
+          <p>1日目企画</p>
+          <p>実行委員会ウェルカム企画（教育会館1階 AV4教室） 18:00 - 19:00</p>
+        </div>-->
+      </div>
+<!--      <div class="col-md-4 col-sm-4 col-xs-6">
+      <a class="twitter-timeline" href="https://twitter.com/asj_onkyo" data-widget-id="494676046638108672" height="250">@asj_onkyo からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-6">
+<a class="twitter-timeline" href="https://twitter.com/hashtag/asj2014a" data-widget-id="494674735171502080" height="250">#asj2014a件のツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div>
+    <div class="row">-->
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第1会場 <span class="place">7号館 D20教室</span></h2>
+        <div id="place1body" class="text-overflow: ellipsis"></div>
+      </div>
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第2会場 <span class="place">7号館 D30教室</span></h2>
+        <div id="place2body"></div>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第3会場 <span class="place">7号館 D31教室</span></h2>
+        <div id="place3body"></div>
+      </div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第4会場 <span class="place">1号館 34教室</span></h2>
+        <div id="place4body"></div>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第5会場 <span class="place">2号館 15教室</span></h2>
+        <div id="place5body"></div>
+      </div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第6会場 <span class="place">2号館 16教室</span></h2>
+        <div id="place6body"></div>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第7会場 <span class="place">3号館 41教室</span></h2>
+        <div id="place7body"></div>
+      </div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第8会場 <span class="place">5号館 40教室</span></h2>
+        <div id="place8body"></div>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第9会場 <span class="place">5号館 50教室</span></h2>
+        <div id="place9body"></div>
+      </div>
+
+      <div class="session col-md-3 col-sm-4 col-xs-6 collapse-group">
+        <h2>第10会場 <span class="place">5号館 60教室</span></h2>
+        <div id="place10body"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="sessionP col-md-3 col-sm-3 col-xs-6 collapse-group">
+        <h2>ポスター1会場 <span class="place">2号館 11教室</span></h2>
+        <div id="place11body"></div>
+      </div>
+
+      <div class="sessionP col-md-3 col-sm-3 col-xs-6 collapse-group">
+        <h2>ポスター2会場 <span class="place">2号館 12教室</span></h2>
+        <div id="place12body"></div>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="sessionP col-md-3 col-sm-3 col-xs-6 collapse-group">
+        <h2>ポスター3会場 <span class="place">2号館 13教室</span></h2>
+        <div id="place13body"></div>
+      </div>
+
+      <div class="sessionP col-md-3 col-sm-3 col-xs-6 collapse-group">
+        <h2>ポスター4会場 <span class="place">2号館 14教室</span></h2>
+        <div id="place14body"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p>Copyright &copy; 2014 日本音響学会 広報・電子化推進委員会</p>
+    </footer>
+  </div> <!-- /container -->
+
+</body>
+
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/asj_program.js"></script>
+<!-- <script src="cordova.js"></script> -->
+<script>
+var json;
+
+$(function(){
+	$.getJSON("asj2014a.json", function(_json){
+		json = _json;
+		asjp_select_day(1);
+
+    asjp_update_now();
+		asjp_updatehtml_nowtime();
+		
+	});
+	
+	if(screen.width <= 360) {
+		var e = $(".col-xs-6");
+		e.addClass("col-xs-12");
+		e.removeClass("col-xs-6");
+	}
+});
+
+if(screen.width <= 360) {
+	$("body").css("font-size", "16px");
+	$("h2 span.place").css("font-size", "70%");
+}
+</script>
+</html>

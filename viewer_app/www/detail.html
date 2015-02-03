@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="./css/sticky-footer-navbar.css" />
+  <link rel="stylesheet" href="./css/jquery.tocify.css" />
+  <link rel="stylesheet" href="./css/asj_program.css" />
+  <style></style>
+  
+  <title>日本音響学会2014年秋季研究発表会</title>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+  <div class="navbar-header pull-left">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span>
+      2014年秋季研究発表会 &raquo;</a>
+  </div>
+  <div class="navbar-header btn-group pull-right hidden-xs">
+    <button type="button" class="btn btn-default btn-sm navbar-btn" onclick="zoom_font_size('body', -1);"><span class="glyphicon glyphicon-zoom-out"></span></button>
+    <button type="button" class="btn btn-default navbar-btn" onclick="zoom_font_size('body', +1);"><span class="glyphicon glyphicon-zoom-in"></span></button>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li id="day1"><a href="#1" onclick="asjd_select_day(1, true);">1日目（9/3水）</a></li>
+      <li id="day2"><a href="#2" onclick="asjd_select_day(2, true);">2日目（9/4木）</a></li>
+      <li id="day3"><a href="#3" onclick="asjd_select_day(3, true);">3日目（9/5金）</a></li>
+<!--      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="data/2014autumn_timeschedule.pdf" target="_blank">タイムテーブル（PDF）</a></li>
+          <li><a href="data/2014autumn_access_map.pdf" target="_blank">会場案内図（PDF）</a></li>
+          <li><a href="data/2014autumn_program.pdf" target="_blank">発表プログラム（PDF）</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Change view</li>
+          <li><a href="index.html">List view</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-ok"><span>Detail view</a></li>
+        </ul>
+      </li>
+-->    </ul>
+<!--
+    <form class="navbar-form navbar-right" role="form">
+      <span id="nowtime" onclick="update_now();asjp_updatehtml_panels();asjp_updatehtml_nowtime();"></span><span class="glyphicon glyphicon-time"></span>
+      <button type="button" class="btn btn-default btn-xs" onclick="update_now(-10);asjp_updatehtml_panels();asjp_updatehtml_nowtime();">
+        <span>-10</span>
+      </button>
+      <button type="button" class="btn btn-default btn-xs" onclick="update_now(+10);asjp_updatehtml_panels();asjp_updatehtml_nowtime();">
+        <span>+10</span>
+      </button>
+    </form>
+-->
+  </div><!--/.navbar-collapse -->
+  </div>
+</div>
+<div class="btn-toolbar navbar navbar-default navbar-fixed-bottom" style="background: none; background-color: rgba(250, 250, 250, 0.8)" role="toolbar">
+  <div class="container">
+    <ul class="pager visible-xs-block">
+      <li class="previous"><a href="#" onclick="return asjd_select_room_animation(-1)">&larr;</a></li>
+      <li><a href="index.html" class="btn btn-lg"><span class="glyphicon glyphicon-home"></span> TOP</a></li>
+      <li class="next"><a href="#" onclick="return asjd_select_room_animation(+1)">&rarr;</a></li>
+    </ul>
+    <div class="hidden-xs">
+      <div class="btn-group">
+        <button id="btn_1" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(1);">1</button>
+        <button id="btn_2" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(2);">2</button>
+        <button id="btn_3" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(3);">3</button>
+        <button id="btn_4" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(4);">4</button>
+        <button id="btn_5" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(5);">5</button>
+      </div>
+      <div class="btn-group">
+        <button id="btn_6" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(6);">6</button>
+        <button id="btn_7" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(7);">7</button>
+        <button id="btn_8" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(8);">8</button>
+        <button id="btn_9" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(9);">9</button>
+        <button id="btn_10" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(10);">10</button>
+      </div>
+      <div class="btn-group">
+        <button id="btn_11" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(11);">P1</button>
+        <button id="btn_12" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(12);">P2</button>
+        <button id="btn_13" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(13);">P3</button>
+        <button id="btn_14" type="button" class="btn btn-default navbar-btn" onclick="javascript:asjd_select_room(14);">P4</button>
+      </div>
+   </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="navbar visible-xs" style="position: fixed; right: 10px; width: 40px; z-index: 100; opacity:.8">
+      <div class="btn-group btn-group-vertical">
+<!--        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', -1);"><span class="glyphicon glyphicon-zoom-out"></span></button>
+        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', +1);"><span class="glyphicon glyphicon-zoom-in"></span></button>
+-->
+        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', +1);"><span class="glyphicon glyphicon-plus"></span></button>
+        <button type="button" class="btn btn-default" onclick="zoom_font_size('body', -1);"><span class="glyphicon glyphicon-minus"></span></button>
+      </div>
+    </div>
+  <div id="asjd_detail_content">
+  <span type="text/template" id="tmpl_asjd_detail_content">
+  {{#sessions}}
+    <div>
+    <h1>{{theme}}</h1>
+    {{#data}}
+    <div class="session_detail" id="{{id}}">
+      <div class="pid">{{id}} <small>({{start}} 〜 {{end}})</small></div>
+      <div><span class="ptitle">{{title}}</span><br/>
+           <span class="pauthor">{{authors}}</span></div>
+    </div>
+    {{/data}}
+    <ul class="pager hidden-xs">
+      <li class="previous"><a href="#" onclick="return asjd_select_room(current_room-1);">&larr; Prev. room</a></li>
+      <li><a href="index.html">TOP PAGE</a></li>
+      <li class="next"><a href="#" onclick="return asjd_select_room(current_room+1);">Next room&rarr;</a></li>
+    </ul>
+     </div>
+  {{/sessions}}
+  {{^sessions}}
+    <h1>CLOSED</h1>
+    <ul class="pager hidden-xs">
+      <li class="previous"><a href="#" onclick="asjd_select_room(current_room-1);">&larr; Prev. room</a></li>
+      <li class="next"><a href="#" onclick="asjd_select_room(current_room+1);">Next room&rarr;</a></li>
+    </ul>
+   {{/sessions}}
+   <hr/>
+   </span>
+ <footer>
+    <p>Copyright &copy; 2014 日本音響学会 広報・電子化推進委員会</p>
+  </footer>
+  </div>
+</div> <!-- /container -->
+
+</body>
+
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/jquery.tocify.min.js"></script>
+<script src="./js/jquery.touchSwipe.min.js"></script>
+<script src="./js/hogan-3.0.2.min.js"></script>
+<script src="./js/asj_program.js"></script>
+<script>
+var json;
+
+var tmpl_asjd_detail_content;
+
+$(function(){
+	tmpl_asjd_detail_content = Hogan.compile($("#asjd_detail_content").html());
+
+	var q = parse_day_and_room();
+	console.log(q);
+	console.log("day = " + q.day + " / room = " + q.room);
+
+	$.getJSON("asj2014a.json", function(_json){
+		json = _json;
+		asjd_select_day(q.day, false);
+		asjd_select_room(q.room, false);
+		asjd_initialize_view();
+
+		var target = $("#"+q.pid);
+		if(target) {
+			var movepos = target.parent().offset().top - 60;
+			$("html,body").animate({scrollTop:movepos}, 1000);
+		}
+		setInterval(function() {
+			asjd_updatehtml_current_session();
+		}, 10 * 1000);
+
+		$("#asjd_detail_content")
+			.css("position", "relative")
+			.css("width", "98%")
+			.css("left", 0);
+		
+	});
+	
+	var swipe_target = $("#asjd_detail_content");
+	swipe_target.swipe({
+		allowPageScroll:"auto",
+		threshold: 180,
+		swipeLeft: function() {
+			asjd_select_room_animation(+1);
+		},
+		swipeRight: function() {
+			asjd_select_room_animation(-1);
+		},
+		swipeStatus:function(event, phase, direction, distance, duration, fingers){
+			//console.log("e" + event + "/p" + phase +"/d"+ direction +"/d"+ distance +"/d"+ duration +"/f"+ fingers);
+			if(distance > 190) distance = 190;
+			if(phase == "move") {
+				if(direction == "right" && distance > 20) {
+					swipe_target.css("left", distance)
+				} else if(direction == "left" && distance > 20) {
+					swipe_target.css("left", -distance)
+				}
+			} else if(phase == "cancel") {
+				swipe_target.animate({left:0}, 250);
+			} else if(phase == "end") {
+				// nop
+			}
+		}
+	});
+});
+
+function asjd_select_room_animation(add_number) {
+	var swipe_target = $("#asjd_detail_content");
+	if(swipe_target.css("left") == "0px") {
+		swipe_target.animate({"left": ((add_number<0)?200:-200)}, 100, function(){
+			if ( asjd_select_room(current_room + add_number) ) {
+				swipe_target.css("left", (add_number<0)?-200:200);
+			} else {
+				swipe_target.css("left", (add_number<0)?200:-200);
+			}
+			swipe_target.animate({left:0}, 200);
+		});
+	} else {
+		asjd_select_room(0 + current_room + add_number);
+		swipe_target.css("left", (add_number<0)?-200:200);
+		swipe_target.animate({left:0}, 200);
+	}
+}
+
+</script>
+</html>
